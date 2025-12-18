@@ -5,9 +5,19 @@ import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
+import { I18nProvider } from "@/lib/i18n/context"
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
-const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-jakarta" })
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+})
+
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-jakarta",
+  display: "swap",
+})
 
 export const metadata: Metadata = {
   title: "TEC4U Digital - Soluções 100% personalizadas para o seu negócio",
@@ -41,11 +51,13 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${inter.variable} ${jakarta.variable}`}>
       <body className="font-sans antialiased">
-        <div className="flex min-h-screen flex-col">
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </div>
+        <I18nProvider>
+          <div className="flex min-h-screen flex-col">
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
+        </I18nProvider>
         <Analytics />
       </body>
     </html>
