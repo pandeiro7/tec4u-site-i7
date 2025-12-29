@@ -42,15 +42,13 @@ export function Hero({ badge, title, titleBold, titleEnd, description }: HeroPro
 
   return (
     <section ref={heroRef} className="hero-section relative min-h-screen overflow-hidden">
-      <div className="hero-filter absolute inset-0">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url(/images/hero-bg.avif)" }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-pink-200/40 via-purple-200/40 to-purple-300/40" />
-      </div>
-
-      <div className="container relative z-10 px-4 py-20 md:px-6 md:py-28">
+      <div className="w-full relative z-10 py-20 md:py-28">
+        <div className="hero-filter absolute inset-0 z-[-1]">
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat rounded-b-xl mx-2"
+            style={{ backgroundImage: "url(/images/hero-bg.avif)" }}
+          />
+        </div>
         <img
           src="https://cdn.prod.website-files.com/6526a00fbfb681da0e87743b/66685c45f3210e55b5c27ae5_Group%20100053821.svg"
           alt="Project Manager"
