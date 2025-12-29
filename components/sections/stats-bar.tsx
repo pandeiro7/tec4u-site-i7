@@ -1,6 +1,7 @@
 "use client"
 
 import { AnimatedCounter } from "@/components/ui/animated-counter"
+import Image from "next/image"
 
 interface Stat {
   value: string
@@ -26,7 +27,7 @@ export function StatsBar({ stats }: StatsBarProps) {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-gray-100 to-white py-20">
       <div className="absolute inset-0 z-0">
-        <img src="/images/stats-bg.png" alt="" className="h-full w-full object-cover opacity-40" />
+        <Image src="/images/stats-bg.png" alt="" fill loading="lazy" className="object-cover opacity-40" />
         <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/60 to-white/80" />
       </div>
 

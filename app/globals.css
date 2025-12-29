@@ -9,7 +9,7 @@
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(0.98 0 0);
+  --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
 
   /* Primary: TEC4U Pink/Magenta #E61755 */
@@ -31,7 +31,21 @@
   --ring: oklch(0.55 0.25 355);
   --radius: 0.5rem;
 
-  /* Added TEC4U brand gradient colors */
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+
+  --sidebar: oklch(0.98 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.55 0.25 355);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.95 0.01 240);
+  --sidebar-accent-foreground: oklch(0.145 0 0);
+  --sidebar-border: oklch(0.92 0 0);
+  --sidebar-ring: oklch(0.55 0.25 355);
+
   --brand-pink: oklch(0.55 0.25 355);
   --brand-purple: oklch(0.55 0.2 285);
   --brand-dark: oklch(0.145 0 0);
@@ -73,12 +87,8 @@
   --sidebar-ring: oklch(0.439 0 0);
 }
 
-/* Updated font configuration to use Inter and Plus Jakarta Sans */
 @theme inline {
-  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
-  --font-mono: var(--font-inter), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
+  /* optional: --font-sans, --font-serif, --font-mono if they are applied in the layout.tsx */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);

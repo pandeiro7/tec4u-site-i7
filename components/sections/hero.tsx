@@ -1,89 +1,90 @@
-"use client";
+"use client"
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react"
+import Image from "next/image"
 
 interface HeroProps {
-  badge: string;
-  title: string;
-  titleBold: string;
-  titleEnd: string;
-  description: string;
+  badge: string
+  title: string
+  titleBold: string
+  titleEnd: string
+  description: string
 }
 
-export function Hero({
-  badge,
-  title,
-  titleBold,
-  titleEnd,
-  description,
-}: HeroProps) {
-  const heroRef = useRef<HTMLElement>(null);
+export function Hero({ badge, title, titleBold, titleEnd, description }: HeroProps) {
+  const heroRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      if (!heroRef.current) return;
+      if (!heroRef.current) return
 
-      const { clientX, clientY } = e;
-      const { innerWidth, innerHeight } = window;
+      const { clientX, clientY } = e
+      const { innerWidth, innerHeight } = window
 
-      const moveX = (clientX - innerWidth / 2) / 50;
-      const moveY = (clientY - innerHeight / 2) / 50;
+      const moveX = (clientX - innerWidth / 2) / 50
+      const moveY = (clientY - innerHeight / 2) / 50
 
       // Apply parallax to tags
-      const tags = heroRef.current.querySelectorAll('[data-parallax="tag"]');
+      const tags = heroRef.current.querySelectorAll('[data-parallax="tag"]')
       tags.forEach((tag) => {
-        (
-          tag as HTMLElement
-        ).style.transform = `translate3d(${moveX}px, ${moveY}px, 0px)`;
-      });
+        ;(tag as HTMLElement).style.transform = `translate3d(${moveX}px, ${moveY}px, 0px)`
+      })
 
       // Apply reverse parallax to cards
-      const cards = heroRef.current.querySelectorAll('[data-parallax="card"]');
+      const cards = heroRef.current.querySelectorAll('[data-parallax="card"]')
       cards.forEach((card) => {
-        (
-          card as HTMLElement
-        ).style.transform = `translate3d(${-moveX}px, ${-moveY}px, 0px)`;
-      });
+        ;(card as HTMLElement).style.transform = `translate3d(${-moveX}px, ${-moveY}px, 0px)`
+      })
 
-      const phone = heroRef.current.querySelector('[data-parallax="phone"]');
+      const phone = heroRef.current.querySelector('[data-parallax="phone"]')
       if (phone) {
-        (phone as HTMLElement).style.transform = `translate3d(${
-          moveX * 0.5
-        }px, ${moveY * 0.5}px, 0px)`;
+        ;(phone as HTMLElement).style.transform = `translate3d(${moveX * 0.5}px, ${moveY * 0.5}px, 0px)`
       }
-    };
+    }
 
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+    window.addEventListener("mousemove", handleMouseMove)
+    return () => window.removeEventListener("mousemove", handleMouseMove)
+  }, [])
 
   return (
-    <section
-      ref={heroRef}
-      className="hero-section relative min-h-screen overflow-hidden"
-    >
+    <section ref={heroRef} className="hero-section relative min-h-screen overflow-hidden">
       <div className="w-full relative z-10 p-4 h-200 lg:h-[89vh] lg:max-h-[660px]">
         <div className="hero-filter absolute inset-0 z-[-1]">
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat rounded-b-xl mx-2"
-            style={{ backgroundImage: "url(/images/hero-bg.avif)" }}
-          />
+          <div className="absolute inset-0 rounded-b-xl mx-2 overflow-hidden">
+            <Image
+              src="/images/hero-bg.avif"
+              alt="Hero background"
+              fill
+              priority
+              className="object-cover"
+              quality={90}
+            />
+          </div>
         </div>
-        <img
+        <Image
           src="/icons/project-manager.svg"
           alt="Project Manager"
+          width={120}
+          height={50}
+          loading="lazy"
           className="tag-gerente absolute left-[12%] bottom-[20%] hidden lg:block transition-transform duration-200"
           data-parallax="tag"
         />
-        <img
+        <Image
           src="/icons/designer.svg"
           alt="Designer"
+          width={120}
+          height={50}
+          loading="lazy"
           className="tag-designer absolute left-[8%] top-[15%] hidden md:block transition-transform duration-200"
           data-parallax="tag"
         />
-        <img
+        <Image
           src="/icons/developer.svg"
           alt="Developer"
+          width={120}
+          height={50}
+          loading="lazy"
           className="tag-dev absolute right-[8%] top-[20%] hidden lg:block transition-transform duration-200"
           data-parallax="tag"
         />
@@ -91,13 +92,10 @@ export function Hero({
         <div className="hero-text-wrapper hero mx-auto max-w-4xl text-center">
           <div className="mb-6">
             <div className="tag inline-block rounded-full border border-gray-900/10 bg-white/80 px-4 py-2 backdrop-blur-sm">
-              <div className="text-xs font-semibold uppercase tracking-wider text-gray-800">
-                {badge}
-              </div>
+              <div className="text-xs font-semibold uppercase tracking-wider text-gray-800">{badge}</div>
             </div>
             <h1 className="title-hero hero flex flex-col mt-6 text-balance text-3xl font-normal leading-tight text-gray-900 md:text-5xl lg:text-5xl">
-              <span className="font-bold">{title}</span>{" "}
-              <span className="font-bold">{titleBold}</span>
+              <span className="font-bold">{title}</span> <span className="font-bold">{titleBold}</span>
               {titleEnd}
             </h1>
           </div>
@@ -112,10 +110,12 @@ export function Hero({
           <div className="relative mx-auto max-w-7xl">
             {/* iPhone Mockup */}
             <div className="relative z-20 mx-auto flex justify-center mb-16 md:mb-0">
-              <img
+              <Image
                 src="/images/phone-mockup.png"
                 alt="iPhone mockup"
-                loading="eager"
+                width={420}
+                height={855}
+                priority
                 className="w-[280px] md:w-[380px] lg:w-[360px] h-auto drop-shadow-2xl transition-transform duration-200"
                 style={{
                   filter: "drop-shadow(0 25px 50px rgba(0, 0, 0, 0.25))",
@@ -135,15 +135,15 @@ export function Hero({
                     sites mais rápidos
                   </div>
                   <div className="horiz-spacer-16 flex items-center gap-4">
-                    <img
+                    <Image
                       src="/icons/pagespeed.svg"
-                      loading="lazy"
                       alt="90+"
+                      width={64}
+                      height={64}
+                      loading="lazy"
                       className="h-16 w-16"
                     />
-                    <div className="text-sm text-gray-600">
-                      Desempenho no Google PageSpeed
-                    </div>
+                    <div className="text-sm text-gray-600">Desempenho no Google PageSpeed</div>
                   </div>
                 </div>
 
@@ -157,26 +157,25 @@ export function Hero({
                       CLIENTES MAIS SATISFEITOS
                     </div>
                     <div className="horiz-spacer-16 flex items-center gap-4">
-                      <img
+                      <Image
                         src="/images/hero-avatars.avif"
-                        loading="lazy"
-                        width="136"
                         alt="Clientes"
+                        width={136}
+                        height={40}
+                        loading="lazy"
                         className="h-auto w-[136px]"
                       />
-                      <div className="card-title text-2xl font-bold text-gray-900">
-                        +6.435
-                      </div>
+                      <div className="card-title text-2xl font-bold text-gray-900">+6.435</div>
                     </div>
                   </div>
                   <div className="div-inside mt-4 space-y-2">
-                    <div className="text-sm text-gray-600">
-                      Experiência de compra:
-                    </div>
-                    <img
+                    <div className="text-sm text-gray-600">Experiência de compra:</div>
+                    <Image
                       src="/icons/stars-5.svg"
-                      loading="lazy"
                       alt="5 estrelas"
+                      width={100}
+                      height={20}
+                      loading="lazy"
                       className="h-4 w-auto"
                     />
                   </div>
@@ -190,30 +189,36 @@ export function Hero({
                   <div className="card-title mb-4 text-xs font-bold uppercase tracking-wider text-gray-800">
                     vendas aumentadas
                   </div>
-                  <img
+                  <Image
                     src="/icons/sales-chart.svg"
-                    loading="lazy"
                     alt="Gráfico de vendas"
+                    width={340}
+                    height={200}
+                    loading="lazy"
                     className="h-auto w-full"
                   />
                 </div>
 
                 {/* Copywriter tag - Bottom Left */}
-                <img
+                <Image
                   src="/icons/copywriter.svg"
                   alt="Copywriter"
+                  width={120}
+                  height={50}
+                  loading="lazy"
                   className="absolute left-[5%] bottom-[20%] hidden lg:block transition-transform duration-200"
                   data-parallax="tag"
-                  loading="lazy"
                 />
 
                 {/* Customer Success tag - Bottom Right */}
-                <img
+                <Image
                   src="/icons/customer-success.svg"
                   alt="Customer Success"
+                  width={120}
+                  height={50}
+                  loading="lazy"
                   className="absolute right-[-7%] bottom-[10%] hidden lg:block transition-transform duration-200"
                   data-parallax="tag"
-                  loading="lazy"
                 />
               </div>
             </div>
@@ -221,5 +226,5 @@ export function Hero({
         </div>
       </section>
     </section>
-  );
+  )
 }

@@ -13,21 +13,12 @@ export function Header() {
   const navigationData = useTranslations("navigation")
 
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [isLanguageOpen, setIsLanguageOpen] = useState(false)
   const [isMobileSolutionsOpen, setIsMobileSolutionsOpen] = useState(false)
   const [isMobileLanguageOpen, setIsMobileLanguageOpen] = useState(false)
 
   if (!navigationData || !navigationData.logo) {
     return null
-  }
-
-  const toggleDropdown = (label: string) => {
-    setActiveDropdown(activeDropdown === label ? null : label)
-  }
-
-  const closeDropdown = () => {
-    setActiveDropdown(null)
   }
 
   const handleLanguageChange = (newLocale: "pt" | "en" | "es") => {
@@ -45,13 +36,9 @@ export function Header() {
 
         <nav className="hidden items-center gap-8 lg:flex">
           {navigationData.mainMenu.map((item) => (
-            <div key={item.label} className="relative">
+            <div key={item.label} className="relative group">
               {item.hasDropdown ? (
-                <button
-                  onClick={() => toggleDropdown(item.label)}
-                  onMouseEnter={() => setActiveDropdown(item.label)}
-                  className="flex items-center gap-2 rounded-full bg-[#E61755] px-5 py-2.5 text-sm font-semibold uppercase text-white transition-all hover:bg-[#d01449]"
-                >
+                <button className="flex items-center gap-2 rounded-full bg-[#E61755] px-5 py-2.5 text-sm font-semibold uppercase text-white transition-all hover:bg-[#d01449]">
                   {item.label}
                   <ChevronDown className="h-4 w-4" />
                 </button>
@@ -68,11 +55,8 @@ export function Header() {
                 </Link>
               )}
 
-              {item.hasDropdown && activeDropdown === item.label && item.dropdown && (
-                <div
-                  className="absolute left-0 top-full mt-2 w-screen max-w-4xl rounded-2xl bg-white p-8 shadow-2xl"
-                  onMouseLeave={closeDropdown}
-                >
+              {item.hasDropdown && item.dropdown && (
+                <div className="absolute left-0 top-full mt-2 w-screen max-w-4xl rounded-2xl bg-white p-8 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none group-hover:pointer-events-auto">
                   <p className="mb-6 text-sm text-[#1E1E1E]">{item.dropdown.title}</p>
 
                   <div className="mb-8 grid grid-cols-2 gap-4">
@@ -80,7 +64,7 @@ export function Header() {
                       <Link
                         key={section.title}
                         href={section.href}
-                        className="group relative rounded-xl bg-gradient-to-br from-gray-50 to-white p-6 transition-all hover:shadow-lg"
+                        className="group/item relative rounded-xl bg-gradient-to-br from-gray-50 to-white p-6 transition-all hover:shadow-lg"
                       >
                         <div className="mb-3 flex items-center gap-3">
                           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white shadow-sm">
@@ -89,6 +73,7 @@ export function Header() {
                               alt={section.title}
                               width={24}
                               height={24}
+                              loading="lazy"
                               className="text-[#E61755]"
                             />
                           </div>
@@ -110,8 +95,8 @@ export function Header() {
                     <div className="mb-4 flex items-center justify-between rounded-xl bg-gray-50 p-4">
                       <div className="flex items-center gap-3">
                         <div className="flex items-center gap-2">
-                          <Image src="/icons/monitor.svg" alt="" width={20} height={20} />
-                          <Image src="/icons/monitor.svg" alt="" width={20} height={20} />
+                          <Image src="/icons/monitor.svg" alt="" width={20} height={20} loading="lazy" />
+                          <Image src="/icons/monitor.svg" alt="" width={20} height={20} loading="lazy" />
                         </div>
                         <span className="text-sm font-medium text-[#1E1E1E]">{item.dropdown.platforms.title}</span>
                       </div>
@@ -129,8 +114,8 @@ export function Header() {
                     <div className="mb-4 flex items-center justify-between rounded-xl bg-gray-50 p-4">
                       <div className="flex items-center gap-3">
                         <div className="flex items-center gap-2">
-                          <Image src="/icons/megaphone.svg" alt="" width={20} height={20} />
-                          <Image src="/icons/megaphone.svg" alt="" width={20} height={20} />
+                          <Image src="/icons/megaphone.svg" alt="" width={20} height={20} loading="lazy" />
+                          <Image src="/icons/megaphone.svg" alt="" width={20} height={20} loading="lazy" />
                         </div>
                         <span className="text-sm font-medium text-[#1E1E1E]">{item.dropdown.ads.title}</span>
                       </div>
@@ -242,6 +227,7 @@ export function Header() {
                           alt=""
                           width={20}
                           height={20}
+                          loading="lazy"
                           className="text-[#E61755]"
                         />
                         <h3 className="text-sm font-bold text-[#1E1E1E]">{section.title}</h3>
