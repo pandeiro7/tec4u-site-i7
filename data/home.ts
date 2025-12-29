@@ -54,12 +54,20 @@ export const heroData = {
 }
 
 export const brandsData = [
-  { name: "Embelleze", logo: "/placeholder.svg?height=40&width=120" },
-  { name: "Pijammá", logo: "/placeholder.svg?height=40&width=120" },
-  { name: "Della Aviamentos", logo: "/placeholder.svg?height=40&width=120" },
-  { name: "Velocita", logo: "/placeholder.svg?height=40&width=120" },
-  { name: "Disatri", logo: "/placeholder.svg?height=40&width=120" },
-  { name: "Pisci", logo: "/placeholder.svg?height=40&width=120" },
+  { name: "Embelleze", logo: "/icons/embelleze.svg" },
+  { name: "novex", logo: "/icons/novex.svg" },
+  { name: "cocacola-andina", logo: "/icons/cocacola-andina.svg" },
+  { name: "Velocita", logo: "/icons/velocita.svg" },
+  { name: "Disatri", logo: "/icons/disatri.svg" },
+  { name: "couroecia", logo: "/icons/couroecia.svg" },
+  { name: "kikos", logo: "/icons/kikos.svg" },
+  { name: "vizzent", logo: "/icons/vizzent.svg" },
+  { name: "oscar", logo: "/icons/oscar.svg" },
+  { name: "gaston", logo: "/icons/gaston.svg" },
+  { name: "petfarma", logo: "/icons/petfarma.svg" },
+  { name: "widicare", logo: "/icons/widicare.svg" },
+  { name: "adatina", logo: "/icons/adatina.svg" },
+  { name: "santal", logo: "/icons/santal.svg" },
 ]
 
 export const solutionsData = [

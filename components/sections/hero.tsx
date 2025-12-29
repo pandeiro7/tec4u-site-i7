@@ -128,7 +128,7 @@ export function Hero({ badge, title, titleBold, titleEnd, description }: HeroPro
               <div className="relative h-full">
                 {/* Card 1: Sites Rápidos - Top Left */}
                 <div
-                  className="hero-card sites absolute left-[-10%] top-[-20%] md:top-[20%] lg:top-[25%] w-[280px] md:w-[320px] rounded-2xl bg-white p-6 shadow-lg transition-transform duration-200 pointer-events-auto"
+                  className="hero-card sites absolute left-[-10%] lg:left-[6%] top-[-20%] md:top-[20%] lg:top-[25%] w-[280px] md:w-[320px] rounded-2xl bg-white p-6 shadow-lg transition-transform duration-200 pointer-events-auto"
                   data-parallax="card"
                 >
                   <div className="card-title mb-4 text-xs font-bold uppercase tracking-wider text-gray-800">

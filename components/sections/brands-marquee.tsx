@@ -12,7 +12,6 @@ interface BrandsMarqueeProps {
 export function BrandsMarquee({ brands }: BrandsMarqueeProps) {
   return (
     <section className="border-y border-border bg-muted py-12">
-      <div className="container px-4 md:px-6">
         <div className="relative overflow-hidden">
           <div className="flex animate-marquee gap-12 md:gap-16">
             {[...brands, ...brands].map((brand, index) => (
@@ -30,7 +29,6 @@ export function BrandsMarquee({ brands }: BrandsMarqueeProps) {
               </div>
             ))}
           </div>
-        </div>
       </div>
     </section>
   )
