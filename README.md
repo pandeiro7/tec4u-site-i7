@@ -23,50 +23,50 @@ Antes de começar, certifique-se de ter instalado em sua máquina:
 
 ### Versões Recomendadas
 
-```bash
+\`\`\`bash
 Node.js: v18.17.0 ou superior
 npm: v9.0.0 ou superior
 pnpm: v8.0.0 ou superior (opcional, mas recomendado)
-```
+\`\`\`
 
 ## 🚀 Instalação
 
 ### 1. Clone o Repositório
 
-```bash
+\`\`\`bash
 git clone <url-do-repositorio>
 cd tec4u-website
-```
+\`\`\`
 
 ### 2. Instale as Dependências
 
 Escolha um gerenciador de pacotes:
 
 **Usando npm:**
-```bash
+\`\`\`bash
 npm install
-```
+\`\`\`
 
 **Usando pnpm (recomendado):**
-```bash
+\`\`\`bash
 pnpm install
-```
+\`\`\`
 
 ### 3. Configuração de Variáveis de Ambiente (Opcional)
 
 O projeto atualmente não requer variáveis de ambiente obrigatórias para rodar em desenvolvimento. No futuro, quando integrar com CMS ou APIs externas, você precisará criar um arquivo `.env.local`:
 
-```bash
+\`\`\`bash
 # Copie o arquivo de exemplo (quando disponível)
 cp .env.example .env.local
-```
+\`\`\`
 
 Exemplo de variáveis que podem ser necessárias no futuro:
-```env
+\`\`\`env
 # .env.local
 NEXT_PUBLIC_API_URL=http://localhost:1337
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
-```
+\`\`\`
 
 ## 💻 Execução
 
@@ -75,14 +75,14 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 Para iniciar o servidor de desenvolvimento:
 
 **Usando npm:**
-```bash
+\`\`\`bash
 npm run dev
-```
+\`\`\`
 
 **Usando pnpm:**
-```bash
+\`\`\`bash
 pnpm dev
-```
+\`\`\`
 
 O site estará disponível em: **http://localhost:3000**
 
@@ -90,35 +90,35 @@ O site estará disponível em: **http://localhost:3000**
 
 Para criar uma build otimizada para produção:
 
-```bash
+\`\`\`bash
 npm run build
 # ou
 pnpm build
-```
+\`\`\`
 
 ### Executar Build de Produção Localmente
 
 Após criar a build, você pode testar localmente:
 
-```bash
+\`\`\`bash
 npm run start
 # ou
 pnpm start
-```
+\`\`\`
 
 ### Linting
 
 Para verificar problemas de código:
 
-```bash
+\`\`\`bash
 npm run lint
 # ou
 pnpm lint
-```
+\`\`\`
 
 ## 📁 Estrutura de Pastas
 
-```
+\`\`\`
 tec4u-website/
 ├── app/                          # Páginas e rotas (Next.js App Router)
 │   ├── layout.tsx               # Layout raiz da aplicação
@@ -174,7 +174,7 @@ tec4u-website/
 ├── tsconfig.json             # Configuração TypeScript
 ├── package.json              # Dependências e scripts
 └── README.md                 # Este arquivo
-```
+\`\`\`
 
 ## 🛠️ Como Fazer Alterações
 
@@ -186,20 +186,20 @@ Todo o conteúdo do site está organizado em arquivos TypeScript na pasta `data/
 
 Edite o arquivo `data/home.ts`:
 
-```typescript
+\`\`\`typescript
 // data/home.ts
 export const heroData = {
   badge: "AGÊNCIA 360°",
   title: "Soluções 100% personalizadas para o seu negócio!",
   // ... outros campos
 }
-```
+\`\`\`
 
 #### Exemplo: Adicionar um novo projeto
 
 Edite `data/home.ts` e adicione no array `projectsData`:
 
-```typescript
+\`\`\`typescript
 export const projectsData = [
   // ... projetos existentes
   {
@@ -209,7 +209,7 @@ export const projectsData = [
     description: "Descrição do projeto..."
   }
 ]
-```
+\`\`\`
 
 ### Adicionando Novas Páginas
 
@@ -217,7 +217,7 @@ export const projectsData = [
 
 Crie um novo arquivo em `app/`:
 
-```typescript
+\`\`\`typescript
 // app/nova-pagina/page.tsx
 import { Metadata } from 'next'
 
@@ -233,26 +233,26 @@ export default function NovaPagina() {
     </div>
   )
 }
-```
+\`\`\`
 
 #### 2. Adicionar ao menu de navegação
 
 Edite `data/navigation.ts`:
 
-```typescript
+\`\`\`typescript
 export const navigationData = {
   menu: [
     // ... itens existentes
     { label: "Nova Página", href: "/nova-pagina" }
   ]
 }
-```
+\`\`\`
 
 ### Criando Novos Componentes
 
 Componentes devem ser criados na pasta `components/` seguindo a estrutura existente:
 
-```typescript
+\`\`\`typescript
 // components/sections/meu-componente.tsx
 import { Button } from '@/components/ui/button'
 
@@ -271,27 +271,27 @@ export function MeuComponente({ title, description }: MeuComponenteProps) {
     </section>
   )
 }
-```
+\`\`\`
 
 ### Estilização com Tailwind CSS
 
 O projeto usa Tailwind CSS v4 com configuração no `app/globals.css`:
 
-```css
+\`\`\`css
 /* app/globals.css */
 @theme inline {
   --color-primary: #E91E63;
   --font-sans: 'Inter', sans-serif;
 }
-```
+\`\`\`
 
 Classes utilitárias estão disponíveis em `lib/utils.ts`:
 
-```typescript
+\`\`\`typescript
 import { cn } from '@/lib/utils'
 
 <div className={cn("base-classes", condition && "conditional-classes")} />
-```
+\`\`\`
 
 ### Sistema de Tradução
 
@@ -301,7 +301,7 @@ O site possui suporte a múltiplos idiomas (PT/EN):
 
 Edite `lib/i18n/translations.ts`:
 
-```typescript
+\`\`\`typescript
 export const translations = {
   pt: {
     home: {
@@ -318,18 +318,18 @@ export const translations = {
     }
   }
 }
-```
+\`\`\`
 
 #### Usar traduções em componentes
 
-```typescript
+\`\`\`typescript
 import { useTranslations } from '@/lib/i18n/hooks'
 
 export function MeuComponente() {
   const t = useTranslations()
   return <h1>{t.home.hero.title}</h1>
 }
-```
+\`\`\`
 
 ## 🚢 Deploy
 
@@ -358,17 +358,17 @@ O projeto é otimizado para deploy na Vercel:
 
 #### Netlify
 
-```bash
+\`\`\`bash
 # Build command
 npm run build
 
 # Publish directory
 .next
-```
+\`\`\`
 
 #### Deploy Manual (VPS)
 
-```bash
+\`\`\`bash
 # 1. Build do projeto
 npm run build
 
@@ -380,7 +380,7 @@ npm install -g pm2
 pm2 start npm --name "tec4u-site" -- start
 pm2 save
 pm2 startup
-```
+\`\`\`
 
 ## 🐛 Troubleshooting
 
@@ -389,7 +389,7 @@ pm2 startup
 **Sintoma:** Erros durante `npm install` ou `pnpm install`
 
 **Solução:**
-```bash
+\`\`\`bash
 # Limpe o cache
 npm cache clean --force
 # ou
@@ -402,14 +402,14 @@ rm -rf node_modules package-lock.json pnpm-lock.yaml
 npm install
 # ou
 pnpm install
-```
+\`\`\`
 
 ### Problema: Porta 3000 já está em uso
 
 **Sintoma:** `Error: listen EADDRINUSE: address already in use :::3000`
 
 **Solução:**
-```bash
+\`\`\`bash
 # Encontre o processo usando a porta 3000
 lsof -i :3000
 
@@ -418,7 +418,7 @@ kill -9 PID
 
 # Ou use uma porta diferente
 PORT=3001 npm run dev
-```
+\`\`\`
 
 ### Problema: Fontes não carregam em produção
 
@@ -438,14 +438,14 @@ PORT=3001 npm run dev
 - Use caminhos relativos: `/image.jpg` ao invés de `./image.jpg`
 - Configure `next.config.mjs` para domínios externos se necessário:
 
-```javascript
+\`\`\`javascript
 // next.config.mjs
 const nextConfig = {
   images: {
     domains: ['example.com'],
   },
 }
-```
+\`\`\`
 
 ### Problema: Erro de hidratação do React
 
@@ -461,13 +461,13 @@ const nextConfig = {
 **Sintoma:** Erros de tipo durante `npm run build`
 
 **Solução:**
-```bash
+\`\`\`bash
 # Execute o type checker
 npx tsc --noEmit
 
 # Corrija os erros apontados
 # Se necessário, adicione // @ts-ignore temporariamente (não recomendado)
-```
+\`\`\`
 
 ### Problema: CSS não aplica em produção
 
@@ -485,17 +485,17 @@ npx tsc --noEmit
 
 1. **Fork o projeto**
 2. **Crie uma branch para sua feature:**
-   ```bash
+   \`\`\`bash
    git checkout -b feature/MinhaNovaFeature
-   ```
+   \`\`\`
 3. **Commit suas mudanças:**
-   ```bash
+   \`\`\`bash
    git commit -m 'Adiciona nova feature X'
-   ```
+   \`\`\`
 4. **Push para a branch:**
-   ```bash
+   \`\`\`bash
    git push origin feature/MinhaNovaFeature
-   ```
+   \`\`\`
 5. **Abra um Pull Request**
 
 ### Padrões de Código
@@ -511,7 +511,7 @@ npx tsc --noEmit
 
 Use prefixos nos commits:
 
-```
+\`\`\`
 feat: Nova funcionalidade
 fix: Correção de bug
 docs: Mudanças na documentação
@@ -519,12 +519,12 @@ style: Formatação, ponto e vírgula, etc
 refactor: Refatoração de código
 test: Adição de testes
 chore: Atualização de build, configs, etc
-```
+\`\`\`
 
 Exemplo:
-```bash
+\`\`\`bash
 git commit -m "feat: adiciona página de contato com formulário"
-```
+\`\`\`
 
 ## 📚 Recursos Adicionais
 
@@ -538,7 +538,7 @@ git commit -m "feat: adiciona página de contato com formulário"
 
 ### Comandos Úteis
 
-```bash
+\`\`\`bash
 # Ver todas as dependências
 npm list --depth=0
 
@@ -550,7 +550,7 @@ npm outdated
 
 # Analisar bundle size
 npm run build && npx @next/bundle-analyzer
-```
+\`\`\`
 
 ## 📝 Notas Importantes
 
@@ -576,7 +576,7 @@ O projeto está otimizado para performance:
 
 Cada página deve ter metadata apropriada:
 
-```typescript
+\`\`\`typescript
 export const metadata: Metadata = {
   title: 'Título da Página - Tec4U Digital',
   description: 'Descrição clara e concisa da página',
@@ -586,7 +586,7 @@ export const metadata: Metadata = {
     images: ['/og-image.jpg'],
   }
 }
-```
+\`\`\`
 
 ## 📞 Suporte
 
