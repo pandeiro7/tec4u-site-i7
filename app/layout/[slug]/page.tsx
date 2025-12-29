@@ -1,5 +1,4 @@
 "use client"
-
 import { notFound } from "next/navigation"
 import { layoutDetailsData, layoutDetailsDataEn } from "@/data/layout-details"
 import { layoutsGalleryData } from "@/data/layouts"
