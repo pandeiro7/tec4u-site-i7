@@ -34,7 +34,7 @@ export function Hero({ badge, title, titleBold, titleEnd, description, roleBadge
       <div className="container relative z-10 px-4 md:px-6">
         {/* Top Text Content */}
         <div className="mx-auto max-w-4xl text-center">
-          <p className="mb-6 text-xs font-bold uppercase tracking-widest text-gray-700">{badge}</p>
+          <p className="mb-6 text-xs font-bold w-max mx-auto uppercase tracking-widest text-gray-700 border border-black/12 px-3.5 py-2 rounded-4xl">{badge}</p>
 
           <h1 className="mb-6 text-balance text-4xl font-bold leading-tight text-gray-900 md:text-6xl lg:text-7xl">
             {title}
