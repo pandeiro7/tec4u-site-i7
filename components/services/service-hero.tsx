@@ -32,7 +32,7 @@ export function ServiceHero({ badge, title, description, image, quickLinks }: Se
 
   return (
     <section className="relative min-h-[90vh] flex items-center bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50">
-      <div className="container mx-auto px-6 py-20">
+      <div className="container mx-auto px-6 py-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Content */}
           <div className="space-y-8">
@@ -40,14 +40,15 @@ export function ServiceHero({ badge, title, description, image, quickLinks }: Se
               {badge}
             </span>
 
-            <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
-              {title.normal} <span className="inline-block">{title.highlight}</span>
-              {title.final && (
+            <h1 className="text-3xl lg:text-5xl font-bold leading-tight">
+              {title.normal + " "} 
+              <span className="font-normal"> {title.highlight} {title.final && (
                 <>
                   <br />
                   {title.final}
                 </>
-              )}
+              )}</span>
+              
             </h1>
 
             <p className="text-lg lg:text-xl text-gray-600 leading-relaxed max-w-2xl">{description}</p>

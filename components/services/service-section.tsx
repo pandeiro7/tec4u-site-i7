@@ -57,7 +57,7 @@ export function ServiceSection({
               {badge}
             </span>
 
-            <h2 className="text-4xl lg:text-5xl font-bold leading-tight">
+            <h2 className="text-4xl lg:text-4xl font-bold leading-tight">
               {title.normal} <span className="inline-block">{title.highlight}</span>
               {title.final && (
                 <>
@@ -92,7 +92,7 @@ export function ServiceSection({
 
           {/* Image */}
           <div
-            className={`relative h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl ${isReversed ? "lg:order-1" : ""}`}
+            className={`relative h-full rounded-3xl overflow-hidden shadow-2xl ${isReversed ? "lg:order-1" : ""}`}
           >
             <Image src={image || "/placeholder.svg"} alt={badge} fill className="object-cover" />
           </div>

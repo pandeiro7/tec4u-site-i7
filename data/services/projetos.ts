@@ -8,7 +8,7 @@ export const projetosData = {
     },
     description:
       "Soluções personalizadas e inovadoras, transformando suas ideias em realidade. Desde a concepção até a implementação, nossa equipe utiliza tecnologias de ponta para otimizar seus processos e te impulsionar no digital.",
-    image: "/projetos-hero.png",
+    image: "/projetos-hero.webp",
     quickLinks: [
       {
         id: "evolucao",
@@ -41,7 +41,7 @@ export const projetosData = {
       description:
         "Nos dedicamos a aprimorar seus sistemas existentes, desde SEO para aumentar sua visibilidade online, até o desenvolvimento de novas funcionalidades inovadoras.",
       ctaText: "preciso de evolução",
-      image: "/young-man-working-computer.jpg",
+      image: "/young-man-working-computer.webp",
       features: [
         {
           title: "SEO",
@@ -74,7 +74,7 @@ export const projetosData = {
       description:
         "Usando de abordagens inovadoras, ajudamos a transformar suas ideias em realidade por meio da criação de projetos digitais eficazes e atraentes para impulsionar o seu negócio online.",
       ctaText: "preciso de um novo site",
-      image: "/programmer-working-code.jpg",
+      image: "/programmer-working-code.webp",
       platformsIntro:
         "Clique nos botões abaixo e conheça os nossos planos envolvendo algumas das plataformas com que trabalhamos:",
       platforms: [
@@ -157,7 +157,7 @@ export const projetosData = {
       description:
         "Implementação e gestão de sistemas de planejamento de recursos empresariais. Essas soluções centralizam processos de negócios, proporcionando controle total e otimização de recursos.",
       ctaText: "preciso de erp",
-      image: "/woman-warehouse-laptop.jpg",
+      image: "/woman-warehouse-laptop.webp",
       platformsIntro: "Conheça algumas das plataformas de ERP com que trabalhamos:",
       platforms: [
         {
