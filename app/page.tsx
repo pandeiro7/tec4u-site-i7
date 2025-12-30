@@ -88,7 +88,7 @@ export default function HomePage() {
 
       <PartnersMarquee {...partnersData} />
 
-      <TestimonialsSection {...testimonialsData} />
+      {/* <TestimonialsSection {...testimonialsData} /> */}
     </>
   )
 }

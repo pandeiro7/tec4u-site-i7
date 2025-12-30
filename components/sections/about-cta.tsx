@@ -54,7 +54,7 @@ export function AboutCTA({ badge, title, titleHighlight, description, ctas }: Ab
                   asChild
                   variant={cta.variant === "primary" ? "default" : "outline"}
                   size="lg"
-                  className="gap-2"
+                  className={`gap-2 ${index == 0 ? "rounded-full bg-gradient-to-r from-[#8454F4] to-[#E61755]" : "uppercase"}`}
                 >
                   <Link href={cta.href}>
                     {cta.text}

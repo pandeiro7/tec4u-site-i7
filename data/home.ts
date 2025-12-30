@@ -207,14 +207,13 @@ export const projectsData = {
 export const partnersData = {
   title: "NOSSOS PARCEIROS",
   partners: [
-    { name: "VTEX", logo: "/vtex-logo.jpg" },
-    { name: "Nuvemshop", logo: "/nuvemshop-logo.png" },
-    { name: "Revi Partners", logo: "/revi-partners-logo.jpg" },
-    { name: "Dinamize", logo: "/dinamize-logo.jpg" },
-    { name: "Compra Rápida", logo: "/compra-r-pida-logo.jpg" },
-    { name: "Deco", logo: "/deco-logo.jpg" },
-    { name: "Wake", logo: "/wake-logo.jpg" },
-    { name: "Olist", logo: "/olist-logo.png" },
+    { name: "VTEX", logo: "/vtex-logo.png" },
+    { name: "Nuvemshop", logo: "/nuvemshop-logo.svg" },
+    { name: "Revi Partners", logo: "/revi-partners-logo.svg" },
+    { name: "Dinamize", logo: "/dinamize-logo.png" },
+    { name: "Compra Rápida", logo: "/compra-r-apida-logo.webp" },
+    { name: "Deco", logo: "/deco-logo.svg" },
+    { name: "Olist", logo: "/olist-logo.svg" },
   ],
 }
 

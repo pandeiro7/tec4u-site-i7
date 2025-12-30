@@ -14,7 +14,7 @@ interface PartnersMarqueeProps {
 export function PartnersMarquee({ title, partners }: PartnersMarqueeProps) {
   return (
     <section className="bg-gradient-to-br from-pink-50 via-purple-50 to-pink-100 py-16">
-      <div className="container px-4 md:px-6">
+      <div className="">
         <div className="mb-12 text-center">
           <Badge
             variant="outline"
@@ -25,7 +25,7 @@ export function PartnersMarquee({ title, partners }: PartnersMarqueeProps) {
         </div>
 
         {/* Partners grid */}
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden py-2">
           <div className="flex animate-marquee gap-8 md:gap-12">
             {/* First set */}
             {partners.map((partner, index) => (

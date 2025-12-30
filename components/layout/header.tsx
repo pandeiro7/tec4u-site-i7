@@ -38,14 +38,14 @@ export function Header() {
           {navigationData.mainMenu.map((item) => (
             <div key={item.label} className="group">
               {item.hasDropdown ? (
-                <button className="flex items-center cursor-pointer gap-2 rounded-full bg-[#E61755] px-5 py-2.5 text-sm font-semibold uppercase text-white transition-all hover:bg-[#d01449]">
+                <button className="flex items-center cursor-pointer gap-2 rounded-full bg-[#E61755] px-5 py-2.5 text-sm font-medium uppercase text-white transition-all hover:bg-[#d01449]">
                   {item.label}
                   <ChevronDown className="h-4 w-4" />
                 </button>
               ) : (
                 <Link
                   href={item.href}
-                  className={`text-sm font-semibold uppercase transition-colors hover:text-[#E61755] ${
+                  className={`text-sm uppercase font-medium transition-colors hover:text-[#E61755] ${
                     item.highlight
                       ? "rounded-full border-2 border-[#E61755] px-4 py-2 text-[#E61755] hover:bg-[#E61755] hover:text-white"
                       : "text-[#1E1E1E]"
@@ -159,7 +159,7 @@ export function Header() {
           <div className="relative">
             <button
               onClick={() => setIsLanguageOpen(!isLanguageOpen)}
-              className="flex items-center gap-2 text-sm font-semibold uppercase text-[#1E1E1E] transition-colors hover:text-[#E61755]"
+              className="flex cursor-pointer items-center gap-2 text-sm font-medium uppercase text-[#1E1E1E] transition-colors hover:text-[#E61755]"
             >
               {navigationData.language.label}
               <ChevronDown className="h-4 w-4" />
@@ -184,7 +184,7 @@ export function Header() {
 
           <Button
             asChild
-            className="gap-2 rounded-full bg-gradient-to-r from-[#8454F4] to-[#E61755] px-6 py-3 font-semibold uppercase text-white shadow-lg transition-transform hover:scale-105"
+            className="gap-2 rounded-full bg-gradient-to-r from-[#8454F4] to-[#E61755] px-6 py-3 font-medium uppercase text-white shadow-lg transition-transform hover:scale-105"
           >
             <Link href={navigationData.contact.href}>
               {navigationData.contact.text}

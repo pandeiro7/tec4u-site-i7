@@ -20,50 +20,17 @@ function MethodIcon({ variant }: { variant: number }) {
     // Responsive icon - four arrows pointing outward
     <svg
       key="responsive-icon"
-      width="48"
-      height="48"
-      viewBox="0 0 48 48"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path d="M24 12L28 16L24 20L20 16L24 12Z" fill={color} />
-      <path d="M36 24L32 20L28 24L32 28L36 24Z" fill={color} />
-      <path d="M24 36L20 32L24 28L28 32L24 36Z" fill={color} />
-      <path d="M12 24L16 28L20 24L16 20L12 24Z" fill={color} />
-    </svg>,
+      xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-device-desktop-heart"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 16h-6a1 1 0 0 1 -1 -1v-10a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v6" /><path d="M7 20h3.5" /><path d="M9 16v4" /><path d="M18 22l3.35 -3.284a2.143 2.143 0 0 0 .005 -3.071a2.242 2.242 0 0 0 -3.129 -.006l-.224 .22l-.223 -.22a2.242 2.242 0 0 0 -3.128 -.006a2.143 2.143 0 0 0 -.006 3.071l3.355 3.296z" /></svg>,
     // Delivery icon - two arrows pointing down and up
-    <svg key="delivery-icon" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M20 12L16 16L20 20L24 16L20 12Z" fill={color} />
-      <path d="M28 36L32 32L28 28L24 32L28 36Z" fill={color} />
-      <path d="M16 24L20 28L24 24L20 20L16 24Z" fill={color} />
-      <path d="M32 24L28 20L24 24L28 28L32 24Z" fill={color} />
-    </svg>,
+    <svg key="delivery-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-calendar-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M11.5 21h-5.5a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v6" /><path d="M16 3v4" /><path d="M8 3v4" /><path d="M4 11h16" /><path d="M15 19l2 2l4 -4" /></svg>,
     // Bug-free icon - arrows forming a shield
-    <svg key="bug-free-icon" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M24 10L28 14L32 18L28 22L24 26L20 22L16 18L20 14L24 10Z" fill={color} />
-      <path d="M24 26L28 30L32 34L28 38L24 34L20 38L16 34L20 30L24 26Z" fill={color} />
-    </svg>,
+    <svg key="bug-free-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-shield-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M11.46 20.846a12 12 0 0 1 -7.96 -14.846a12 12 0 0 0 8.5 -3a12 12 0 0 0 8.5 3a12 12 0 0 1 -.09 7.06" /><path d="M15 19l2 2l4 -4" /></svg>,
     // Retention icon - circular arrows
-    <svg key="retention-icon" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M24 14L32 18L28 26L24 22L24 14Z" fill={color} />
-      <path d="M24 34L16 30L20 22L24 26L24 34Z" fill={color} />
-      <path d="M14 24L18 16L26 20L22 24L14 24Z" fill={color} />
-      <path d="M34 24L30 32L22 28L26 24L34 24Z" fill={color} />
-    </svg>,
+    <svg key="retention-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-presentation"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 4l18 0" /><path d="M4 4v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-10" /><path d="M12 16l0 4" /><path d="M9 20l6 0" /><path d="M8 12l3 -3l2 2l3 -3" /></svg>,
     // Transparency icon - diamond with lines
     <svg
       key="transparency-icon"
-      width="48"
-      height="48"
-      viewBox="0 0 48 48"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path d="M24 8L32 16L24 24L16 16L24 8Z" fill={color} />
-      <path d="M24 24L32 32L24 40L16 32L24 24Z" fill={color} />
-      <path d="M8 24L16 32L24 24L16 16L8 24Z" fill={color} />
-      <path d="M40 24L32 16L24 24L32 32L40 24Z" fill={color} />
-    </svg>,
+      xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-users"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /><path d="M21 21v-2a4 4 0 0 0 -3 -3.85" /></svg>,
   ]
 
   return paths[variant]
@@ -89,7 +56,7 @@ export function MethodSection({ badge, title, titleHighlight, description, pilla
           <div className="space-y-8">
             {pillars.map((pillar, index) => (
               <div key={index} className="flex gap-4">
-                <div className="flex-shrink-0">
+                <div className="flex-shrink-0 px-3 pt-1 text-[#03cbf0]">
                   <MethodIcon variant={index} />
                 </div>
                 <div className="space-y-2">

@@ -1,22 +1,37 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter, Plus_Jakarta_Sans } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import localFont from "next/font/local"
 import "./globals.css"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { I18nProvider } from "@/lib/i18n/context"
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-})
-
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  variable: "--font-jakarta",
-  display: "swap",
+// Configuração da General Sans local
+const generalSans = localFont({
+  src: [
+    {
+      path: "../public/fonts/GeneralSans-Light.woff2",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/GeneralSans-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/GeneralSans-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/GeneralSans-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-general-sans",
 })
 
 export const metadata: Metadata = {
@@ -49,8 +64,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pt-BR" className={`${inter.variable} ${jakarta.variable}`}>
-      <body className="font-sans antialiased">
+    <html lang="pt-BR" className={generalSans.variable}>
+      <body className={`${generalSans.className} antialiased font-sans`}>
         <I18nProvider>
           <div className="flex min-h-screen flex-col">
             <Header />

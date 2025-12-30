@@ -1,5 +1,6 @@
 "use client"
 import { notFound } from "next/navigation"
+import { use } from "react"
 import { layoutDetailsData, layoutDetailsDataEn } from "@/data/layout-details"
 import { layoutsGalleryData } from "@/data/layouts"
 import { LayoutDetailHero } from "@/components/sections/layout-detail-hero"
@@ -13,17 +14,21 @@ import { useI18n } from "@/lib/i18n/context"
 import { useTranslations } from "@/lib/i18n/hooks"
 
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 export default function LayoutDetailPage({ params }: PageProps) {
+  const { slug } = use(params)
+  
   const { locale } = useI18n()
   const t = useTranslations("layoutDetail")
 
   const layoutData = locale === "en" ? layoutDetailsDataEn : layoutDetailsData
-  const layout = layoutData[params.slug]
+  
+  // 4. Use a variável 'slug' extraída acima
+  const layout = layoutData[slug]
 
   if (!layout) {
     notFound()

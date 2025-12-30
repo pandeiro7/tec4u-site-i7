@@ -21,7 +21,7 @@ export default function LayoutsPage() {
   return (
     <main>
       <LayoutsHero {...layoutsHeroData} />
-      <CategoriesSection {...categoriesData} />
+      {/* <CategoriesSection {...categoriesData} /> */}
       <LayoutsGallery {...layoutsGalleryData} />
       <LayoutsBenefits {...layoutsBenefitsData} />
       <AboutCTA {...layoutsCtaData} />
